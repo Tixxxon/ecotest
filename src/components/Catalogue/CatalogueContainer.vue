@@ -7,7 +7,7 @@
             :title="productsData.etc1.title"
             :dimension="productsData.etc1.dimension"
             :product="productsData.etc1.product"
-            :explosive="productsData.etc1.product"
+            :explosive="productsData.etc1.explosive"
             :image-src="productsData.etc1.imageSrc"
           />
         </div>
@@ -16,8 +16,18 @@
             :title="productsData.etc2.title"
             :dimension="productsData.etc2.dimension"
             :product="productsData.etc2.product"
-            :explosive="productsData.etc2.product"
+            :explosive="productsData.etc2.explosive"
             :image-src="productsData.etc2.imageSrc"
+          />
+        </div>
+        <div class="catalogue__item-container">
+          <CatalogueItemType2
+            :title="productsData.etc3k.title"
+            :dimension="productsData.etc3k.dimension"
+            :note="productsData.etc3k.note"
+            :product="productsData.etc3k.product"
+            :explosive="productsData.etc3k.explosive"
+            :image-src="productsData.etc3k.imageSrc"
           />
         </div>
       </div>
@@ -27,10 +37,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import CatalogueItemType1 from './CatalogueItemType1.vue';
+import CatalogueItemType2 from './CatalogueItemType2.vue';
 
 export default defineComponent({
   components: {
     CatalogueItemType1,
+    CatalogueItemType2,
   },
   setup() {
     const productsData = {
@@ -66,6 +78,27 @@ export default defineComponent({
         },
         imageSrc: 'etc-2.png',
       },
+      etc3k: {
+        title: 'Взрывозащитный контейнер ЭТЦ-3К (ВЗК ЭТЦ-3К)',
+        explosive: {
+          unit: 'кг',
+          value: '1.5',
+        },
+        dimension: {
+          unit: 'мм',
+          value: {
+            height: '860',
+            width: '677',
+            depth: '1250',
+          },
+        },
+        product: {
+          unit: 'кг',
+          value: '2.2',
+        },
+        note: 'Изделие может комплектоваться специальным прицепом для перевозки автотранспортом',
+        imageSrc: 'etc-3k.png',
+      },
     };
 
     return { productsData };
@@ -76,8 +109,8 @@ export default defineComponent({
 <style lang="less">
 .catalogue {
   &__item {
-    border: 1px solid gray;
-    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
     padding: 15px;
 
     &-container {
@@ -87,7 +120,7 @@ export default defineComponent({
 
   &__title {
     font-weight: 600;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
   }
 }
