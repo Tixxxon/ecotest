@@ -173,6 +173,28 @@ const { nextImage, prevImage, imageSrc } = useImageCarousel(props.images);
   background-size: cover;
   background-position: center;
   height: 330px;
+  &__button {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    &:hover {
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    }
+    &--prev {
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &--next {
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 }
 .dimension {
   &__line {

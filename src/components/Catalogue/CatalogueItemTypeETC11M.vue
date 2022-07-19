@@ -1,26 +1,24 @@
 <template>
-  <div class="catalogue__item catalogue__item--type-1">
-    <div class="grid content__wrapper">
-      <div class="grid__col grid__col--4-of-12">
-        <div
-          class="picture"
-          :style="{
-            'background-image': 'url(' + imageSrc + ')',
-          }"
-        >
-          <span
-            v-if="images.length > 1"
-            @click="prevImage"
-            class="picture__button picture__button--prev"
-          ></span>
-          <span
-            v-if="images.length > 1"
-            @click="nextImage"
-            class="picture__button picture__button--next"
-          ></span>
-        </div>
+  <div class="catalogue__item catalogue__item--type-2">
+    <div class="content__wrapper">
+      <div
+        class="picture"
+        :style="{
+          'background-image': 'url(' + imageSrc + ')',
+        }"
+      >
+        <span
+          v-if="images.length > 1"
+          @click="prevImage"
+          class="picture__button picture__button--prev"
+        ></span>
+        <span
+          v-if="images.length > 1"
+          @click="nextImage"
+          class="picture__button picture__button--next"
+        ></span>
       </div>
-      <div class="catalogue__content grid__col grid__col--8-of-12">
+      <div class="catalogue__content">
         <div class="catalogue__title">
           {{ title }}
         </div>
@@ -52,6 +50,7 @@
     </div>
   </div>
 </template>
+
 <script lang="ts" setup>
 import { defineProps } from 'vue';
 import { useImageCarousel } from './image';
@@ -67,7 +66,6 @@ interface Props {
   images: string[];
   itemDescriptions: ProductParam[];
 }
-
 const props = defineProps<Props>();
 
 const { nextImage, prevImage, imageSrc } = useImageCarousel(props.images);
@@ -81,11 +79,16 @@ const { nextImage, prevImage, imageSrc } = useImageCarousel(props.images);
   flex-grow: 1;
   &__wrapper {
     display: flex;
+    flex-direction: column;
   }
   &__item {
-    margin: 25px 0;
+    margin: 15px 0;
   }
   &__item-text {
+  }
+  &__item-note {
+    font-size: 0.9em;
+    line-height: 1.5em;
   }
   &__item-subtext {
     font-size: 0.8em;
@@ -98,12 +101,14 @@ const { nextImage, prevImage, imageSrc } = useImageCarousel(props.images);
   &__content {
     display: flex;
     flex-direction: column;
+    margin-top: 1em;
   }
   &__item {
-    &--type-1 {
+    &--type-2 {
     }
   }
 }
+
 .picture {
   position: relative;
   width: 100%;
@@ -112,6 +117,28 @@ const { nextImage, prevImage, imageSrc } = useImageCarousel(props.images);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 350px;
+  height: 450px;
+  &__button {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    &:hover {
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    }
+    &--prev {
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &--next {
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 }
 </style>
