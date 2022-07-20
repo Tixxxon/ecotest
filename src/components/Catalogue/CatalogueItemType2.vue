@@ -1,99 +1,90 @@
 <template>
   <div class="catalogue__item catalogue__item--type-2">
-    <div class="content__wrapper">
-      <div
-        class="picture"
-        :style="{
-          'background-image': 'url(' + imageSrc + ')',
-        }"
-      >
-        <span
-          v-if="images.length > 1"
-          @click="prevImage"
-          class="picture__button picture__button--prev"
-        ></span>
-        <span
-          v-if="images.length > 1"
-          @click="nextImage"
-          class="picture__button picture__button--next"
-        ></span>
+    <div class="grid content__wrapper">
+      <div class="grid__col grid__col--12-of-12">
+        <ImageSlider :images="images" />
       </div>
-      <div class="catalogue__content">
-        <div class="catalogue__title">
-          {{ title }}
-        </div>
-        <div class="content">
-          <div class="content__item">
-            <div class="grid">
-              <div class="grid__col grid__col--9-of-12">
-                <div class="content__item-text text--regular">
-                  Масса заряда ВВ, допустимого к безопасному хранению,
-                  {{ explosive.unit }}
-                </div>
-                <div class="content__item-subtext">
-                  (в тротиловом эквиваленте)
-                </div>
-              </div>
-              <div class="grid__col grid__col--3-of-12 text--right text--bold">
-                {{ explosive.value }}
-              </div>
-            </div>
+      <div class="grid__col grid__col--12-of-12">
+        <div class="catalogue__content">
+          <div class="catalogue__title">
+            {{ title }}
           </div>
-          <div class="content__item">
-            <div class="grid">
-              <div class="grid__col grid__col--9-of-12">
-                <div class="content__item-text text--regular">
-                  Габариты контейнера, {{ dimension.unit }}
+          <div class="content">
+            <div class="content__item">
+              <div class="grid">
+                <div class="grid__col grid__col--9-of-12">
+                  <div class="content__item-text text--regular">
+                    Масса заряда ВВ, допустимого к безопасному хранению,
+                    {{ explosive.unit }}
+                  </div>
+                  <div class="content__item-subtext">
+                    (в тротиловом эквиваленте)
+                  </div>
                 </div>
-              </div>
-              <div
-                class="grid__col grid__col--3-of-12 text--right text--regular"
-              >
-                <div class="dimension__line grid">
-                  <span class="dimension__label grid__col grid__col--6-of-12"
-                    >высота</span
-                  >
-                  <span class="dimension__value grid__col grid__col--6-of-12">
-                    {{ dimension.value.height }}
-                  </span>
-                </div>
-                <div class="dimension__line grid">
-                  <span class="dimension__label grid__col grid__col--6-of-12"
-                    >ширина</span
-                  >
-                  <span class="dimension__value grid__col grid__col--6-of-12">
-                    {{ dimension.value.width }}
-                  </span>
-                </div>
-                <div class="dimension__line grid">
-                  <span class="dimension__label grid__col grid__col--6-of-12"
-                    >длина</span
-                  >
-                  <span class="dimension__value grid__col grid__col--6-of-12">
-                    {{ dimension.value.depth }}
-                  </span>
+                <div
+                  class="grid__col grid__col--3-of-12 text--right text--bold"
+                >
+                  {{ explosive.value }}
                 </div>
               </div>
             </div>
-          </div>
-          <div class="content__item">
-            <div class="grid">
-              <div class="grid__col grid__col--9-of-12">
-                <div class="content__item-text text--regular">
-                  Масса контейнера с транспортировочной тележкой,
-                  {{ product.unit }}
+            <div class="content__item">
+              <div class="grid">
+                <div class="grid__col grid__col--9-of-12">
+                  <div class="content__item-text text--regular">
+                    Габариты контейнера, {{ dimension.unit }}
+                  </div>
                 </div>
-                <div class="content__item-subtext">(не более)</div>
-              </div>
-              <div class="grid__col grid__col--3-of-12 text--right text--bold">
-                {{ product.value }}
+                <div
+                  class="grid__col grid__col--3-of-12 text--right text--regular"
+                >
+                  <div class="dimension__line grid">
+                    <span class="dimension__label grid__col grid__col--6-of-12"
+                      >высота</span
+                    >
+                    <span class="dimension__value grid__col grid__col--6-of-12">
+                      {{ dimension.value.height }}
+                    </span>
+                  </div>
+                  <div class="dimension__line grid">
+                    <span class="dimension__label grid__col grid__col--6-of-12"
+                      >ширина</span
+                    >
+                    <span class="dimension__value grid__col grid__col--6-of-12">
+                      {{ dimension.value.width }}
+                    </span>
+                  </div>
+                  <div class="dimension__line grid">
+                    <span class="dimension__label grid__col grid__col--6-of-12"
+                      >длина</span
+                    >
+                    <span class="dimension__value grid__col grid__col--6-of-12">
+                      {{ dimension.value.depth }}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="content__item" v-if="note">
-            <div class="content__item-note text--regular">
-              <span class="text--bold">Примечание: </span>
-              <span class="text--light">{{ note }}</span>
+            <div class="content__item">
+              <div class="grid">
+                <div class="grid__col grid__col--9-of-12">
+                  <div class="content__item-text text--regular">
+                    Масса контейнера с транспортировочной тележкой,
+                    {{ product.unit }}
+                  </div>
+                  <div class="content__item-subtext">(не более)</div>
+                </div>
+                <div
+                  class="content__item-value grid__col grid__col--3-of-12 text--right text--bold"
+                  v-html="product.value"
+                ></div>
+              </div>
+            </div>
+            <div class="content__item" v-if="note">
+              <div class="content__item-note text--regular">
+                <span class="text--bold">Примечание: </span>
+                <span class="text--light">{{ note }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -103,7 +94,7 @@
 </template>
 <script lang="ts" setup>
 import { defineProps } from 'vue';
-import { useImageCarousel } from './image';
+import ImageSlider from '../Common/ImageSlider.vue';
 
 interface ProductParam {
   unit: string;
@@ -121,9 +112,8 @@ interface Props {
   product: ProductParam;
   note?: string;
 }
-const props = defineProps<Props>();
 
-const { nextImage, prevImage, imageSrc } = useImageCarousel(props.images);
+defineProps<Props>();
 </script>
 
 <style lang="less" scoped>
@@ -172,7 +162,7 @@ const { nextImage, prevImage, imageSrc } = useImageCarousel(props.images);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 330px;
+  height: 400px;
 }
 .dimension {
   &__line {

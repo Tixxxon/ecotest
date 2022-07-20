@@ -2,23 +2,7 @@
   <div class="catalogue__item catalogue__item--type-1">
     <div class="grid content__wrapper">
       <div class="grid__col grid__col--4-of-12">
-        <div
-          class="picture"
-          :style="{
-            'background-image': 'url(' + imageSrc + ')',
-          }"
-        >
-          <span
-            v-if="images.length > 1"
-            @click="prevImage"
-            class="picture__button picture__button--prev"
-          ></span>
-          <span
-            v-if="images.length > 1"
-            @click="nextImage"
-            class="picture__button picture__button--next"
-          ></span>
-        </div>
+        <ImageSlider :images="images" />
       </div>
       <div class="catalogue__content grid__col grid__col--8-of-12">
         <div class="catalogue__title">
@@ -42,9 +26,10 @@
                   {{ itemDescription.subtext }}
                 </div>
               </div>
-              <div class="grid__col grid__col--3-of-12 text--right text--bold">
-                {{ itemDescription.value }}
-              </div>
+              <div
+                class="content__item-value grid__col grid__col--3-of-12 text--right text--bold"
+                v-html="itemDescription.value"
+              ></div>
             </div>
           </div>
         </div>
@@ -54,7 +39,7 @@
 </template>
 <script lang="ts" setup>
 import { defineProps } from 'vue';
-import { useImageCarousel } from './image';
+import ImageSlider from '../Common/ImageSlider.vue';
 
 interface ProductParam {
   text: string;
@@ -68,9 +53,7 @@ interface Props {
   itemDescriptions: ProductParam[];
 }
 
-const props = defineProps<Props>();
-
-const { nextImage, prevImage, imageSrc } = useImageCarousel(props.images);
+defineProps<Props>();
 </script>
 
 <style lang="less" scoped>

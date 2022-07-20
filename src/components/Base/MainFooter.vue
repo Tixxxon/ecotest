@@ -1,7 +1,9 @@
 <template>
   <div class="ect-footer">
     <div class="grid">
-      <div class="grid__col grid__col-12-of-12">ООО НПП "ЭКОТЕСТ ЛТД"</div>
+      <div class="grid__col grid__col-12-of-12 text--black">
+        ООО НПП "ЭКОТЕСТ ЛТД" 2022г.
+      </div>
     </div>
   </div>
 </template>
@@ -12,5 +14,7 @@
 .ect-footer {
   background-color: @gray-color;
   color: white;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 </style>

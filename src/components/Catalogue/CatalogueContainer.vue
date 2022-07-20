@@ -1,7 +1,7 @@
 <template>
   <div class="catalogue">
     <div class="grid">
-      <div class="grid__col grid__col--10-of-12 grid__col--push-1-of-12">
+      <div class="grid__col grid__col--12-of-12">
         <div class="catalogue__item-container">
           <CatalogueItemType1
             :title="productsData.etc1.title"
@@ -345,7 +345,7 @@ export default defineComponent({
           },
           {
             text: 'Температурный диапазон применения, °С',
-            value: '-25 +40',
+            value: 'от -25<br/>до +40',
           },
         ],
         imageSrc: ['etcv-14mk/etcv-14mk-1.png', 'etcv-14mk/etcv-14mk-2.png'],
@@ -395,32 +395,15 @@ export default defineComponent({
 
   &__title {
     font-weight: 600;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
+    background-color: #ffcfa3;
+    padding: 10px;
+    color: black;
+    border-radius: 3px 3px 3px 3px;
   }
 }
-.picture {
-  &__button {
-    cursor: pointer;
-    position: absolute;
-    display: block;
-    border-radius: 50%;
-    background-color: white;
-    width: 30px;
-    height: 30px;
-    &:hover {
-      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-    }
-    &--prev {
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    &--next {
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+.content {
+  &__item-value {
+    font-size: 1.3em;
   }
 }
 </style>
