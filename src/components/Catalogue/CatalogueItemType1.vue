@@ -94,4 +94,10 @@ defineProps<Props>();
 .picture {
   min-height: 350px;
 }
+
+@media screen and (max-width: @md-size) {
+  .picture {
+    min-height: 800px;
+  }
+}
 </style>
