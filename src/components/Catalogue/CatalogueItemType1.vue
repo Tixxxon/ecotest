@@ -1,10 +1,10 @@
 <template>
   <div class="catalogue__item catalogue__item--type-1">
-    <div class="grid content__wrapper">
-      <div class="grid__col grid__col--4-of-12">
+    <div class="row content__wrapper">
+      <div class="col-xs-12 col-md-4">
         <ImageSlider :images="images" />
       </div>
-      <div class="catalogue__content grid__col grid__col--8-of-12">
+      <div class="catalogue__content col-xs-12 col-md-8">
         <div class="catalogue__title">
           {{ title }}
         </div>
@@ -14,8 +14,8 @@
             v-for="(itemDescription, index) in itemDescriptions"
             :key="index"
           >
-            <div class="grid">
-              <div class="grid__col grid__col--9-of-12">
+            <div class="row">
+              <div class="col-xs-12 col-sm-8">
                 <div class="content__item-text text--regular">
                   {{ itemDescription.text }}
                 </div>
@@ -26,10 +26,12 @@
                   {{ itemDescription.subtext }}
                 </div>
               </div>
-              <div
-                class="content__item-value grid__col grid__col--3-of-12 text--right text--bold"
-                v-html="itemDescription.value"
-              ></div>
+              <div class="col-xs-12 col-sm-4">
+                <div
+                  class="content__item-value text--right text--bold"
+                  v-html="itemDescription.value"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
@@ -57,6 +59,8 @@ defineProps<Props>();
 </script>
 
 <style lang="less" scoped>
+@import url('@/assets/styles/base/variables.less');
+@import url('@/assets/styles/base/catalogue-item.less');
 .content {
   display: flex;
   flex-direction: column;
@@ -88,13 +92,6 @@ defineProps<Props>();
   }
 }
 .picture {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   min-height: 350px;
 }
 </style>

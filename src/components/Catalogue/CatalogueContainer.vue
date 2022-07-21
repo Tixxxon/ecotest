@@ -382,27 +382,11 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-.catalogue {
-  &__item {
-    border: 1px solid #ccc;
-    border-radius: 9px;
-    padding: 15px;
-
-    &-container {
-      margin-bottom: 30px;
-    }
-  }
-
-  &__title {
-    font-weight: 600;
-    background-color: #ffcfa3;
-    padding: 10px;
-    color: black;
-    border-radius: 3px 3px 3px 3px;
-  }
-}
 .content {
   &__item-value {
+    display: flex;
+    justify-content: end;
+    align-items: center;
     font-size: 1.3em;
   }
 }

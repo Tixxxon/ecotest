@@ -1,11 +1,11 @@
 <template>
   <div class="ect-header">
     <div class="ect-container">
-      <div class="grid ect-header__content">
-        <div class="ect-header__logo grid__col grid__col--1-of-3 text--black">
+      <div class="row ect-header__content">
+        <div class="ect-header__logo text--black col-xs-12 col-sm-12 col-md-4">
           ООО НПП "ЭКОТЕСТ ЛТД"
         </div>
-        <div class="grid__col grid__col--1-of-3">
+        <div class="hidden-xs hidden-sm col-md-4">
           <div class="ect-header__working">
             <div class="grid ect-header__line">
               <span class="grid__col grid__col--1-of-2 ect-header__working-days"
@@ -36,24 +36,34 @@
             </div>
           </div>
         </div>
-        <div class="grid__col grid__col--1-of-3">
+        <div class="hidden-xs col-sm-12 col-md-4">
           <div class="ect-header__contact">
-            <div class="ect-header__line text--right">
-              <a class="ect-header__contact-item" href="tel:+78313067244"
-                >+7 (83130) 6-72-44</a
-              >
-            </div>
-            <div class="ect-header__line text--right">
-              <a class="ect-header__contact-item" href="tel:+78313067254"
-                >+7 (83130) 6-72-54</a
-              >
-            </div>
-            <div class="ect-header__line text--right">
-              <a
-                class="ect-header__contact-item"
-                href="mailto:ecotest.ltd.141@gmail.com"
-                >ecotest.ltd.141@gmail.com</a
-              >
+            <div>
+              <div class="row">
+                <div
+                  class="ect-header__line text--right col-xs-6 col-sm-6 col-md-12 center-sm end-md"
+                >
+                  <a class="ect-header__contact-item" href="tel:+78313067244"
+                    >+7 (83130) 6-72-44</a
+                  >
+                </div>
+                <div
+                  class="ect-header__line text--right col-xs-6 col-sm-6 col-md-12 center-sm end-md"
+                >
+                  <a class="ect-header__contact-item" href="tel:+78313067254"
+                    >+7 (83130) 6-72-54</a
+                  >
+                </div>
+                <div
+                  class="ect-header__line text--right col-xs-12 col-sm-12 col-md-12 center-sm end-md"
+                >
+                  <a
+                    class="ect-header__contact-item"
+                    href="mailto:ecotest.ltd.141@gmail.com"
+                    >ecotest.ltd.141@gmail.com</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>

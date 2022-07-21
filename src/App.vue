@@ -3,6 +3,7 @@
 </template>
 
 <style lang="less">
+@import url('@/assets/styles/base/variables.less');
 @import url('@/assets/styles/styles.less');
 
 body {
@@ -46,6 +47,12 @@ body {
     &::first-letter {
       margin-left: 1em;
     }
+  }
+}
+
+@media screen and (max-width: @sm-size) {
+  body {
+    font-size: 22px;
   }
 }
 </style>

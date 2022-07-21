@@ -1,18 +1,18 @@
 <template>
   <div class="catalogue__item catalogue__item--type-2">
-    <div class="grid content__wrapper">
-      <div class="grid__col grid__col--12-of-12">
+    <div class="row content__wrapper">
+      <div class="col-xs-12">
         <ImageSlider :images="images" />
       </div>
-      <div class="grid__col grid__col--12-of-12">
+      <div class="col-xs-12">
         <div class="catalogue__content">
           <div class="catalogue__title">
             {{ title }}
           </div>
           <div class="content">
             <div class="content__item">
-              <div class="grid">
-                <div class="grid__col grid__col--9-of-12">
+              <div class="row">
+                <div class="col-xs-9">
                   <div class="content__item-text text--regular">
                     Масса заряда ВВ, допустимого к безопасному хранению,
                     {{ explosive.unit }}
@@ -22,43 +22,47 @@
                   </div>
                 </div>
                 <div
-                  class="grid__col grid__col--3-of-12 text--right text--bold"
+                  class="content__item-value text--right text--bold col-xs-3"
                 >
                   {{ explosive.value }}
                 </div>
               </div>
             </div>
             <div class="content__item">
-              <div class="grid">
-                <div class="grid__col grid__col--9-of-12">
+              <div class="row">
+                <div class="col-xs-12 col-sm-8 content__item-text">
                   <div class="content__item-text text--regular">
                     Габариты контейнера, {{ dimension.unit }}
                   </div>
                 </div>
-                <div
-                  class="grid__col grid__col--3-of-12 text--right text--regular"
-                >
-                  <div class="dimension__line grid">
-                    <span class="dimension__label grid__col grid__col--6-of-12"
+                <div class="text--right text--regular col-xs-12 col-sm-4">
+                  <div class="dimension__line row">
+                    <span class="dimension__label col-xs-6 text--left"
                       >высота</span
                     >
-                    <span class="dimension__value grid__col grid__col--6-of-12">
+                    <span
+                      class="dimension__value content__item-value col-xs-6 text--right text--bold"
+                    >
                       {{ dimension.value.height }}
                     </span>
                   </div>
-                  <div class="dimension__line grid">
-                    <span class="dimension__label grid__col grid__col--6-of-12"
+                  <div class="dimension__line row">
+                    <span class="dimension__label col-xs-6 text--left"
                       >ширина</span
                     >
-                    <span class="dimension__value grid__col grid__col--6-of-12">
+                    <span
+                      class="dimension__value content__item-value col-xs-6 text--right text--bold"
+                    >
                       {{ dimension.value.width }}
                     </span>
                   </div>
-                  <div class="dimension__line grid">
-                    <span class="dimension__label grid__col grid__col--6-of-12"
+                  <div class="dimension__line row">
+                    <span class="dimension__label col-xs-6 text--left"
                       >длина</span
                     >
-                    <span class="dimension__value grid__col grid__col--6-of-12">
+                    <span
+                      class="dimension__value content__item-value col-xs-6 text--right text--bold"
+                    >
                       {{ dimension.value.depth }}
                     </span>
                   </div>
@@ -66,8 +70,8 @@
               </div>
             </div>
             <div class="content__item">
-              <div class="grid">
-                <div class="grid__col grid__col--9-of-12">
+              <div class="row">
+                <div class="col-xs-9">
                   <div class="content__item-text text--regular">
                     Масса контейнера с транспортировочной тележкой,
                     {{ product.unit }}
@@ -75,7 +79,7 @@
                   <div class="content__item-subtext">(не более)</div>
                 </div>
                 <div
-                  class="content__item-value grid__col grid__col--3-of-12 text--right text--bold"
+                  class="content__item-value text--right text--bold col-xs-3"
                   v-html="product.value"
                 ></div>
               </div>
@@ -117,6 +121,8 @@ defineProps<Props>();
 </script>
 
 <style lang="less" scoped>
+@import url('@/assets/styles/base/variables.less');
+@import url('@/assets/styles/base/catalogue-item.less');
 .content {
   display: flex;
   flex-direction: column;
@@ -155,19 +161,20 @@ defineProps<Props>();
 }
 
 .picture {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   height: 400px;
 }
 .dimension {
   &__line {
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: @sm-size) {
+  .catalogue {
+    &__content {
+      margin-top: 0;
+    }
   }
 }
 </style>

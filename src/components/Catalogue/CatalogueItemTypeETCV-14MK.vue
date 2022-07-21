@@ -127,6 +127,8 @@ const { nextImage, prevImage, imageSrc } = useImageCarousel(props.images);
 </script>
 
 <style lang="less" scoped>
+@import url('@/assets/styles/base/variables.less');
+@import url('@/assets/styles/base/catalogue-item.less');
 .content {
   display: flex;
   flex-direction: column;
@@ -165,36 +167,7 @@ const { nextImage, prevImage, imageSrc } = useImageCarousel(props.images);
 }
 
 .picture {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   height: 330px;
-  &__button {
-    cursor: pointer;
-    position: absolute;
-    display: block;
-    border-radius: 50%;
-    background-color: white;
-    width: 30px;
-    height: 30px;
-    &:hover {
-      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-    }
-    &--prev {
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    &--next {
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
 }
 .dimension {
   &__line {

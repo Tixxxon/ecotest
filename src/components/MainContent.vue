@@ -1,8 +1,8 @@
 <template>
   <div class="ect-container">
     <section class="ect-section text--center">
-      <div class="grid">
-        <div class="grid__col grid__col--7-of-12 grid__col--push">
+      <div class="row center-xs">
+        <div class="col-xs-12 col-md-8 col-md-push-2">
           <div class="quote">
             <div class="quote__text text--left">
               "За безопасность необходимо платить, a за ее отсутствие -
