@@ -1,7 +1,7 @@
 <template>
   <div class="contacts">
-    <div class="grid">
-      <div class="grid__col grid__col--5-of-12">
+    <div class="row">
+      <div class="col-xs-12 col-md-5">
         <h2 class="contacts__title text--center text--bold">Адрес</h2>
         <div class="contacts__address text--center">
           <div class="text--regular">Юридический адрес:</div>
@@ -18,9 +18,7 @@
           >
         </div>
       </div>
-      <div
-        class="grid__col grid__col--4-of-12 grid__col--push-3-of-12 text--center"
-      >
+      <div class="col-xs-12 col-md-5 col-md-offset-2 text--center">
         <h2 class="contacts__title text--center text--bold">Как связаться</h2>
         <div class="contacts__contact">
           <a href="mailto:ecotest.ltd.141@gmail.com"
@@ -33,43 +31,15 @@
         <div class="contacts__contact">
           <a href="tel:+78313067254">+7(83130) 6-72-54</a>
         </div>
-        <div class="contacts__contact">
-          <div class="ect-header__working">
-            <div class="grid ect-header__line">
-              <span class="grid__col grid__col--1-of-2 ect-header__working-days"
-                >ПН-ЧТ</span
-              >
-              <span
-                class="grid__col grid__col--1-of-2 ect-header__working-time text--right"
-                >с 8:00 - 17:00</span
-              >
-            </div>
-            <div class="grid ect-header__line">
-              <span class="grid__col grid__col--1-of-2 ect-header__working-days"
-                >ПТ</span
-              >
-              <span
-                class="grid__col grid__col--1-of-2 ect-header__working-time text--right"
-                >с 8:00 - 16:00</span
-              >
-            </div>
-            <div class="grid ect-header__line">
-              <span class="grid__col grid__col--1-of-2 ect-header__working-days"
-                >СБ-ВС</span
-              >
-              <span
-                class="grid__col grid__col--1-of-2 ect-header__working-time text--right"
-                >Выходной</span
-              >
-            </div>
+        <div class="contacts__contact row center-xs">
+          <div class="col-xs-12 col-sm-8">
+            <working-time />
           </div>
         </div>
       </div>
     </div>
-    <div class="grid">
-      <div
-        class="grid__col grid__col--8-of-12 grid__col--push-2-of-12 text--center"
-      >
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2 text--center">
         <span class="contacts__company text--bold">
           Общество с ограниченной ответственностью<br />Научно-производственное
           предприятие «ЭКОТЕСТ ЛТД»<br />(ООО НПП «ЭКОТЕСТ ЛТД»)
@@ -78,6 +48,7 @@
     </div>
   </div>
 </template>
+
 <style lang="less" scoped>
 .contacts {
   &__title {
@@ -95,6 +66,9 @@
   }
   &__company {
     line-height: 1.4em;
+  }
+
+  &__working-time {
   }
 }
 </style>

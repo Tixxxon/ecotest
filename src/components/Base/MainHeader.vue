@@ -7,32 +7,10 @@
         </div>
         <div class="hidden-xs hidden-sm col-md-4">
           <div class="ect-header__working">
-            <div class="grid ect-header__line">
-              <span class="grid__col grid__col--1-of-2 ect-header__working-days"
-                >ПН-ЧТ</span
-              >
-              <span
-                class="grid__col grid__col--1-of-2 ect-header__working-time text--right"
-                >с 8:00 - 17:00</span
-              >
-            </div>
-            <div class="grid ect-header__line">
-              <span class="grid__col grid__col--1-of-2 ect-header__working-days"
-                >ПТ</span
-              >
-              <span
-                class="grid__col grid__col--1-of-2 ect-header__working-time text--right"
-                >с 8:00 - 16:00</span
-              >
-            </div>
-            <div class="grid ect-header__line">
-              <span class="grid__col grid__col--1-of-2 ect-header__working-days"
-                >СБ-ВС</span
-              >
-              <span
-                class="grid__col grid__col--1-of-2 ect-header__working-time text--right"
-                >Выходной</span
-              >
+            <div class="row center-sm">
+              <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                <working-time />
+              </div>
             </div>
           </div>
         </div>

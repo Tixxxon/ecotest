@@ -10,6 +10,12 @@ import {
   faCircleRight,
 } from '@fortawesome/free-regular-svg-icons';
 
+import WorkingTime from '@/components/Common/WorkingTime.vue';
+
 library.add(faCircleLeft, faCircleRight);
 
-createApp(App).use(router).component('fa-icon', FontAwesomeIcon).mount('#app');
+createApp(App)
+  .use(router)
+  .component('fa-icon', FontAwesomeIcon)
+  .component('working-time', WorkingTime)
+  .mount('#app');
