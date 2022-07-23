@@ -14,11 +14,10 @@
               <div class="row">
                 <div class="col-xs-9">
                   <div class="content__item-text text--regular">
-                    Масса заряда ВВ, допустимого к безопасному хранению,
-                    {{ explosive.unit }}
+                    {{ explosive.text }}
                   </div>
-                  <div class="content__item-subtext">
-                    (в тротиловом эквиваленте)
+                  <div class="content__item-subtext" v-if="explosive.subtext">
+                    {{ explosive.subtext }}
                   </div>
                 </div>
                 <div
@@ -32,7 +31,10 @@
               <div class="row">
                 <div class="col-xs-12 col-sm-8 content__item-text">
                   <div class="content__item-text text--regular">
-                    Габариты контейнера, {{ dimension.unit }}
+                    {{ dimension.text }}
+                  </div>
+                  <div class="content__item-subtext" v-if="dimension.subtext">
+                    {{ dimension.subtext }}
                   </div>
                 </div>
                 <div class="text--right text--regular col-xs-12 col-sm-4">
@@ -73,10 +75,11 @@
               <div class="row">
                 <div class="col-xs-9">
                   <div class="content__item-text text--regular">
-                    Масса контейнера с транспортировочной тележкой,
-                    {{ product.unit }}
+                    {{ product.text }}
                   </div>
-                  <div class="content__item-subtext">(не более)</div>
+                  <div class="content__item-subtext" v-if="product.subtext">
+                    {{ product.subtext }}
+                  </div>
                 </div>
                 <div
                   class="content__item-value text--right text--bold col-xs-3"
@@ -101,7 +104,8 @@ import { defineProps } from 'vue';
 import ImageSlider from '../Common/ImageSlider.vue';
 
 interface ProductParam {
-  unit: string;
+  text: string;
+  subtext?: string;
   value: string;
 }
 
@@ -110,7 +114,8 @@ interface Props {
   images: string[];
   explosive: ProductParam;
   dimension: {
-    unit: string;
+    text: string;
+    subtext?: string;
     value: { width: string; height: string; depth: string };
   };
   product: ProductParam;
