@@ -19,29 +19,23 @@
         <div class="catalogue__item-container">
           <CatalogueItemType2
             :title="productsData.etc3k.title"
-            :dimension="productsData.etc3k.dimension"
+            :item-descriptions="productsData.etc3k.itemDescriptions"
             :note="productsData.etc3k.note"
-            :product="productsData.etc3k.product"
-            :explosive="productsData.etc3k.explosive"
             :images="productsData.etc3k.imageSrc"
           />
         </div>
         <div class="catalogue__item-container">
           <CatalogueItemType2
             :title="productsData.etc3mk.title"
-            :dimension="productsData.etc3mk.dimension"
+            :item-descriptions="productsData.etc3mk.itemDescriptions"
             :note="productsData.etc3mk.note"
-            :product="productsData.etc3mk.product"
-            :explosive="productsData.etc3mk.explosive"
             :images="productsData.etc3mk.imageSrc"
           />
         </div>
         <div class="catalogue__item-container">
           <CatalogueItemType2
             :title="productsData.etc15.title"
-            :dimension="productsData.etc15.dimension"
-            :product="productsData.etc15.product"
-            :explosive="productsData.etc15.explosive"
+            :item-descriptions="productsData.etc15.itemDescriptions"
             :images="productsData.etc15.imageSrc"
           />
         </div>
@@ -55,10 +49,8 @@
         <div class="catalogue__item-container">
           <CatalogueItemType2
             :title="productsData.etc45.title"
-            :dimension="productsData.etc45.dimension"
-            :product="productsData.etc45.product"
+            :item-descriptions="productsData.etc45.itemDescriptions"
             :note="productsData.etc45.note"
-            :explosive="productsData.etc45.explosive"
             :images="productsData.etc45.imageSrc"
           />
         </div>
@@ -111,7 +103,7 @@ export default defineComponent({
   setup() {
     const productsData = {
       etc1: {
-        title: 'Взрывозащитный контейнер ЭТЦ-1 (ВЗК ЭТЦ-1)',
+        title: 'Взрывозащитный контейнер ЭТЦ-1',
         itemDescriptions: [
           {
             text: 'Масса загружаемого ВВ, г',
@@ -119,8 +111,8 @@ export default defineComponent({
             value: '10',
           },
           {
-            text: 'Габариты контейнера длина/диаметр, мм',
-            value: '200/100',
+            text: 'Диаметр загрузочного отверстия, мм',
+            value: '70',
           },
           {
             text: 'Масса контейнера, кг',
@@ -131,7 +123,7 @@ export default defineComponent({
         imageSrc: ['etc-1/etc-1-1.png'],
       },
       etc2: {
-        title: 'Взрывозащитный контейнер ЭТЦ-2 (ВЗК ЭТЦ-2)',
+        title: 'Взрывозащитный контейнер ЭТЦ-2',
         itemDescriptions: [
           {
             text: 'Масса загружаемого ВВ, г',
@@ -140,7 +132,11 @@ export default defineComponent({
           },
           {
             text: 'Габариты контейнера длина/диаметр, мм',
-            value: '615/412',
+            value: '625/412',
+          },
+          {
+            text: 'Диаметр загрузочного отверстия, мм',
+            value: '163',
           },
           {
             text: 'Масса контейнера, кг',
@@ -151,47 +147,65 @@ export default defineComponent({
         imageSrc: ['etc-2/etc-2-1.png'],
       },
       etc3k: {
-        title: 'Взрывозащитный контейнер ЭТЦ-3К (ВЗК ЭТЦ-3К)',
-        explosive: {
-          text: 'Масса заряда ВВ, допустимого к безопасному хранению, кг',
-          subtext: '(в тротиловом эквиваленте)',
-          value: '1.5',
-        },
-        dimension: {
-          text: 'Габариты контейнера, мм',
-          value: {
-            height: '860',
-            width: '677',
-            depth: '1250',
+        title: 'Взрывозащитный контейнер ЭТЦ-3К',
+        itemDescriptions: [
+          {
+            text: 'Масса заряда ВВ, допустимого к безопасному хранению, кг',
+            subtext: '(в тротиловом эквиваленте)',
+            value: '1.5',
           },
-        },
-        product: {
-          text: 'Масса контейнера с транспортировочной тележкой, кг',
-          value: '390',
-        },
+          {
+            text: 'Габариты контейнера, мм',
+            value: [
+              { text: 'высота', value: '860' },
+              { text: 'ширина', value: '677' },
+              { text: 'длина', value: '1250' },
+            ],
+          },
+          {
+            text: 'Диаметр загрузочного отверстия, мм',
+            value: '390',
+          },
+          {
+            text: 'Масса контейнера с транспортировочной тележкой, кг',
+            subtext: '(не более)',
+            value: '390',
+          },
+        ],
         note: 'Изделие может комплектоваться специальным прицепом для перевозки автотранспортом',
         imageSrc: ['etc-3k/etc-3k-1.png', 'etc-3k/etc-3k-2.png'],
       },
       etc3mk: {
-        title: 'Взрывозащитный контейнер ЭТЦ-3МК (ВЗК ЭТЦ-3МК)',
-        explosive: {
-          text: 'Масса заряда ВВ, допустимого к безопасному хранению и транспортированию, кг',
-          subtext: '(в тротиловом эквиваленте)',
-          value: '1.5',
-        },
-        dimension: {
-          text: 'Габариты контейнера, мм',
-          value: {
-            height: '860',
-            width: '670',
-            depth: '1340',
+        title: 'Взрывозащитный контейнер ЭТЦ-3МК',
+        itemDescriptions: [
+          {
+            text: 'Масса заряда ВВ, допустимого к безопасному хранению и транспортированию, кг',
+            subtext: '(в тротиловом эквиваленте)',
+            value: '1.5',
           },
-        },
-        product: {
-          text: 'Масса контейнера с транспортировочной тележкой, кг',
-          value: '392',
-        },
-        note: 'Изделие может комплектоваться специальным прицепом для перевозки автотранспортом',
+          {
+            text: 'Габариты контейнера, мм',
+            value: [
+              { text: 'высота', value: '860' },
+              { text: 'ширина', value: '670' },
+              {
+                text: 'длина',
+                subtext: '(при закрытой/открытой пробке)',
+                value: '1340',
+              },
+            ],
+          },
+          {
+            text: 'Диаметр загрузочного отверстия, мм',
+            value: '390',
+          },
+          {
+            text: 'Масса контейнера с транспортировочной тележкой, кг',
+            subtext: '(не более)',
+            value: '392',
+          },
+        ],
+        note: 'Изделие обладает повышенной герметичностью и может комплектоваться специальным прицепом для перевозки автотранспортом',
         imageSrc: [
           'etc-3mk/etc-3mk-1.png',
           'etc-3mk/etc-3mk-2.png',
@@ -200,29 +214,31 @@ export default defineComponent({
         ],
       },
       etc15: {
-        title: 'Взрывозащитный контейнер ЭТЦ-15 (ВЗК ЭТЦ-15)',
-        explosive: {
-          text: 'Масса загружаемого ВВ, кг',
-          subtext: '(в тротиловом эквиваленте)',
-          value: '60',
-        },
-        dimension: {
-          text: 'Габариты контейнера, мм',
-          value: {
-            height: '215',
-            width: '242',
-            depth: '405',
+        title: 'Взрывозащитный контейнер ЭТЦ-15',
+        itemDescriptions: [
+          {
+            text: 'Масса загружаемого ВВ, кг',
+            subtext: '(в тротиловом эквиваленте)',
+            value: '60',
           },
-        },
-        product: {
-          text: 'Масса контейнера, кг',
-          subtext: '(не более)',
-          value: '13',
-        },
+          {
+            text: 'Габариты длина/диаметр, мм',
+            value: '405/210',
+          },
+          {
+            text: 'Диаметр загрузочного отверстия, мм',
+            value: '180',
+          },
+          {
+            text: 'Масса контейнера, кг',
+            subtext: '(не более)',
+            value: '13',
+          },
+        ],
         imageSrc: ['etc-15/etc-15-1.png', 'etc-15/etc-15-2.png'],
       },
       etc16: {
-        title: 'Взрывозащитный контейнер ЭТЦ-16 (ВЗК ЭТЦ-16)',
+        title: 'Взрывозащитный контейнер ЭТЦ-16',
         itemDescriptions: [
           {
             text: 'Масса загружаемого ВВ, г',
@@ -231,7 +247,11 @@ export default defineComponent({
           },
           {
             text: 'Габариты контейнера длина/диаметр, мм',
-            value: '405/205',
+            value: '720/412',
+          },
+          {
+            text: 'Диаметр загрузочного отверстия, мм',
+            value: '260х120',
           },
           {
             text: 'Масса контейнера, кг',
@@ -242,25 +262,28 @@ export default defineComponent({
         imageSrc: ['etc-16/etc-16-1.png'],
       },
       etc45: {
-        title: 'Взрывозащитный контейнер ЭТЦ-45 (ВЗК ЭТЦ-45)',
-        explosive: {
-          text: 'Масса загружаемого ВВ, г',
-          subtext: '(в тротиловом эквиваленте)',
-          value: '100',
-        },
-        dimension: {
-          text: 'Габариты контейнера, мм',
-          value: {
-            width: '242',
-            height: '215',
-            depth: '405',
+        title: 'Взрывозащитный контейнер ЭТЦ-45',
+        itemDescriptions: [
+          {
+            text: 'Масса загружаемого ВВ, г',
+            subtext: '(в тротиловом эквиваленте)',
+            value: '100',
           },
-        },
-        product: {
-          text: 'Масса контейнера, кг',
-          subtext: '(не более)',
-          value: '18',
-        },
+          {
+            text: 'Габариты длина/диаметр, мм',
+            value: '405/210',
+          },
+          {
+            text: 'Диаметр загрузочного отверстия, мм',
+            value: '180',
+          },
+          {
+            text: 'Масса контейнера, кг',
+            subtext: '(не более)',
+            value: '18',
+          },
+        ],
+
         note: 'Применяется для обеспечения безопасного хранения и транспортировки взрывоопасных устройств и веществ, включая 60 шт. электродетонаторов типа ЭД-8-Ж-2000',
         imageSrc: ['etc-15/etc-15-1.png'],
       },
@@ -286,8 +309,7 @@ export default defineComponent({
         imageSrc: ['etcv-12/etcv-12-1.png'],
       },
       etc11m: {
-        title:
-          'Специальный взрывозащитный комплект ЭТЦ11М-«Демпфер-М» (ЭТЦ11М)',
+        title: 'Специальный взрывозащитный комплект ЭТЦ11М-«Демпфер-М»',
         itemDescriptions: [
           {
             text: 'Расстояние до обезвреживаемого СВУ при работе манипулятором, м',
@@ -328,8 +350,7 @@ export default defineComponent({
         imageSrc: ['etc11m/etc11m-1.png'],
       },
       etcv14mk: {
-        title:
-          'Многоцелевой ствольный разрушитель – «Деформатор-М» (ЭТЦВ-14МК)',
+        title: 'Многоцелевой ствольный разрушитель – «Деформатор-М»',
         itemDescriptions: [
           {
             text: 'Калибр стреляющего устройства, мм',
@@ -348,6 +369,10 @@ export default defineComponent({
             text: 'Тип и толщина пробиваемой преграды, мм',
             subtext: 'фанера (дробью с жидкостью)',
             value: '4',
+          },
+          {
+            text: 'Дульная скорость метаемых тел, м/сек',
+            value: '240',
           },
           {
             text: 'Температурный диапазон применения, °С',

@@ -10,87 +10,56 @@
             {{ title }}
           </div>
           <div class="content">
-            <div class="content__item">
-              <div class="row">
-                <div class="col-xs-9">
+            <div
+              class="content__item"
+              v-for="(itemDescription, index) in itemDescriptions"
+              :key="index"
+            >
+              <div class="row no-gutter">
+                <div class="col-xs-12 col-sm-8">
                   <div class="content__item-text text--regular">
-                    {{ explosive.text }}
+                    {{ itemDescription.text }}
                   </div>
-                  <div class="content__item-subtext" v-if="explosive.subtext">
-                    {{ explosive.subtext }}
-                  </div>
-                </div>
-                <div
-                  class="content__item-value text--right text--bold col-xs-3"
-                >
-                  {{ explosive.value }}
-                </div>
-              </div>
-            </div>
-            <div class="content__item">
-              <div class="row">
-                <div class="col-xs-12 col-sm-8 content__item-text">
-                  <div class="content__item-text text--regular">
-                    {{ dimension.text }}
-                  </div>
-                  <div class="content__item-subtext" v-if="dimension.subtext">
-                    {{ dimension.subtext }}
+                  <div
+                    class="content__item-subtext"
+                    v-if="itemDescription.subtext"
+                  >
+                    {{ itemDescription.subtext }}
                   </div>
                 </div>
-                <div class="text--right text--regular col-xs-12 col-sm-4">
-                  <div class="dimension__line row">
-                    <span class="dimension__label col-xs-6 text--left"
-                      >высота</span
+                <div class="col-xs-12 col-sm-4">
+                  <div
+                    v-if="typeof itemDescription.value === 'string'"
+                    class="content__item-value text--right text--bold"
+                    v-html="itemDescription.value"
+                  ></div>
+                  <div v-else class="text--right text--regular">
+                    <div
+                      class="dimension__line row"
+                      v-for="(subItem, idx) in itemDescription.value"
+                      :key="idx"
                     >
-                    <span
-                      class="dimension__value content__item-value col-xs-6 text--right text--bold"
-                    >
-                      {{ dimension.value.height }}
-                    </span>
-                  </div>
-                  <div class="dimension__line row">
-                    <span class="dimension__label col-xs-6 text--left"
-                      >ширина</span
-                    >
-                    <span
-                      class="dimension__value content__item-value col-xs-6 text--right text--bold"
-                    >
-                      {{ dimension.value.width }}
-                    </span>
-                  </div>
-                  <div class="dimension__line row">
-                    <span class="dimension__label col-xs-6 text--left"
-                      >длина</span
-                    >
-                    <span
-                      class="dimension__value content__item-value col-xs-6 text--right text--bold"
-                    >
-                      {{ dimension.value.depth }}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="content__item">
-              <div class="row">
-                <div class="col-xs-9">
-                  <div class="content__item-text text--regular">
-                    {{ product.text }}
-                  </div>
-                  <div class="content__item-subtext" v-if="product.subtext">
-                    {{ product.subtext }}
+                      <div class="dimension__label col-xs-6">
+                        <div class="col-xs-12">
+                          <div
+                            class="content__item-text text--regular text--center"
+                          >
+                            {{ subItem.text }}
+                          </div>
+                          <div
+                            class="content__item-subtext text--center"
+                            v-if="subItem.subtext"
+                          >
+                            {{ subItem.subtext }}
+                          </div>
+                        </div>
+                      </div>
+                      <span class="content__item-value col-xs-6 text--bold">
+                        {{ subItem.value }}
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <div
-                  class="content__item-value text--right text--bold col-xs-3"
-                  v-html="product.value"
-                ></div>
-              </div>
-            </div>
-            <div class="content__item" v-if="note">
-              <div class="content__item-note text--regular">
-                <span class="text--bold">Примечание: </span>
-                <span class="text--light">{{ note }}</span>
               </div>
             </div>
           </div>
@@ -106,19 +75,13 @@ import ImageSlider from '../Common/ImageSlider.vue';
 interface ProductParam {
   text: string;
   subtext?: string;
-  value: string;
+  value: string | ProductParam[];
 }
 
 interface Props {
   title: string;
   images: string[];
-  explosive: ProductParam;
-  dimension: {
-    text: string;
-    subtext?: string;
-    value: { width: string; height: string; depth: string };
-  };
-  product: ProductParam;
+  itemDescriptions: ProductParam[];
   note?: string;
 }
 
@@ -166,7 +129,7 @@ defineProps<Props>();
 }
 
 .picture {
-  height: 400px;
+  height: 500px;
 }
 .dimension {
   &__line {

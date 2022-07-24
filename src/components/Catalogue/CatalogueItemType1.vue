@@ -92,12 +92,12 @@ defineProps<Props>();
   }
 }
 .picture {
-  min-height: 350px;
+  // min-height: 500px;
 }
 
 @media screen and (max-width: @md-size) {
   .picture {
-    min-height: 800px;
+    // min-height: 800px;
   }
 }
 </style>
