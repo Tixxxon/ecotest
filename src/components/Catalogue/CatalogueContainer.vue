@@ -1,7 +1,7 @@
 <template>
   <div class="catalogue">
-    <div class="grid">
-      <div class="grid__col grid__col--12-of-12">
+    <div class="row">
+      <div class="col-xs-12">
         <div class="catalogue__item-container">
           <CatalogueItemType1
             :title="productsData.etc1.title"
@@ -90,7 +90,6 @@
 import { defineComponent } from 'vue';
 import CatalogueItemType1 from './CatalogueItemType1.vue';
 import CatalogueItemType2 from './CatalogueItemType2.vue';
-// import CatalogueItemTypeETCV14MK from './CatalogueItemTypeETCV-14MK.vue';
 import CatalogueItemTypeETC11M from './CatalogueItemTypeETC11M.vue';
 
 export default defineComponent({
@@ -98,7 +97,6 @@ export default defineComponent({
     CatalogueItemType1,
     CatalogueItemType2,
     CatalogueItemTypeETC11M,
-    // CatalogueItemTypeETCV14MK,
   },
   setup() {
     const productsData = {

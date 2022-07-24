@@ -1,9 +1,7 @@
 <template>
   <div class="ect-footer">
-    <div class="grid">
-      <div class="grid__col grid__col-12-of-12 text--black">
-        ООО НПП "ЭКОТЕСТ ЛТД" 2022г.
-      </div>
+    <div class="row">
+      <div class="col-xs-12 text--black">ООО НПП "ЭКОТЕСТ ЛТД" 2022г.</div>
     </div>
   </div>
 </template>
