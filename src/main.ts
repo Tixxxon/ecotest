@@ -3,9 +3,6 @@ import App from './App.vue';
 import router from './router';
 import 'flexboxgrid2';
 
-import 'viewerjs/dist/viewer.css';
-// import VueViewer from 'v-viewer';
-
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
