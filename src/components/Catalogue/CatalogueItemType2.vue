@@ -2,7 +2,7 @@
   <div class="catalogue__item catalogue__item--type-2">
     <div class="row content__wrapper">
       <div class="col-xs-12">
-        <ImageSlider :images="images" />
+        <ImageSlider class="content__picture" :images="images" />
       </div>
       <div class="col-xs-12">
         <div class="catalogue__content">
@@ -112,6 +112,10 @@ defineProps<Props>();
   &__item-subtext {
     font-size: 0.8em;
   }
+  &__picture {
+    max-height: 700px;
+    height: 700px;
+  }
 }
 .catalogue {
   &__title {
@@ -128,9 +132,6 @@ defineProps<Props>();
   }
 }
 
-.picture {
-  height: 500px;
-}
 .dimension {
   &__line {
     margin-top: 10px;
@@ -139,6 +140,10 @@ defineProps<Props>();
 }
 
 @media screen and (max-width: @sm-size) {
+  // .content__picture {
+  //   max-height: 700px;
+  //   height: 700px;
+  // }
   .catalogue {
     &__content {
       margin-top: 0;

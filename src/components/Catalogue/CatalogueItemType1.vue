@@ -2,7 +2,7 @@
   <div class="catalogue__item catalogue__item--type-1">
     <div class="row content__wrapper">
       <div class="col-xs-12 col-md-4">
-        <ImageSlider :images="images" />
+        <ImageSlider class="content__picture" :images="images" />
       </div>
       <div class="catalogue__content col-xs-12 col-md-8">
         <div class="catalogue__title">
@@ -91,13 +91,11 @@ defineProps<Props>();
     }
   }
 }
-.picture {
-  // min-height: 500px;
-}
 
-@media screen and (max-width: @md-size) {
-  .picture {
-    // min-height: 800px;
+@media screen and (max-width: @sm-size) {
+  .content__picture {
+    min-height: 900px;
+    height: 900px;
   }
 }
 </style>

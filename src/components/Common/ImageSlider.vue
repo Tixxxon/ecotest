@@ -172,10 +172,4 @@ const showFullImage = function () {
     }
   }
 }
-
-@media screen and (min-width: @xs-size) and (max-width: @sm-size) {
-  .picture {
-    min-height: 900px;
-  }
-}
 </style>

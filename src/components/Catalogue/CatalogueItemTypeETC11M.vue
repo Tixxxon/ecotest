@@ -1,7 +1,7 @@
 <template>
   <div class="catalogue__item catalogue__item--type-2">
     <div class="content__wrapper">
-      <ImageSlider :images="images" />
+      <ImageSlider class="content__picture" :images="images" />
       <div class="catalogue__content">
         <div class="catalogue__title">
           {{ title }}
@@ -95,8 +95,9 @@ defineProps<Props>();
   }
 }
 
-.picture {
-  height: 450px;
+.content__picture {
+  height: 700px;
+  background-position: top left;
 }
 
 @media screen and (max-width: @sm-size) {
