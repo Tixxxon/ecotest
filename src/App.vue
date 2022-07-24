@@ -44,7 +44,6 @@ body {
 
   &-paragraph {
     line-height: 2em;
-    margin-top: 0.6em;
     text-align: justify;
     &::first-letter {
       margin-left: 1em;

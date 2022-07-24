@@ -129,13 +129,17 @@ const showFullImage = function () {
       position: absolute;
       transform: translateY(-50%);
       overflow: hidden;
-      width: 90%;
+      width: 90vw;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     &-image {
-      border-radius: 8px;
       max-width: 100%;
       max-height: 100%;
-      // width: 100%;
+      width: 100%;
+      object-fit: contain;
     }
     &-closebtn {
       position: absolute;

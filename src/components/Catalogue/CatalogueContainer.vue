@@ -379,7 +379,7 @@ export default defineComponent({
             value: 'от -25<br/>до +40',
           },
         ],
-        imageSrc: ['etcv-14mk/etcv-14mk-1.png', 'etcv-14mk/etcv-14mk-2.png'],
+        imageSrc: ['etcv-14mk/etcv-14mk-2.png', 'etcv-14mk/etcv-14mk-1.png'],
       },
       etcv1200400: {
         title:

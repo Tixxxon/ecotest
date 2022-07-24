@@ -1,9 +1,7 @@
 <template>
   <div class="catalogue__item catalogue__item--type-2">
     <div class="content__wrapper">
-      <div class="col-xs-12">
-        <ImageSlider :images="images" />
-      </div>
+      <ImageSlider :images="images" />
       <div class="catalogue__content">
         <div class="catalogue__title">
           {{ title }}
