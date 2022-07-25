@@ -62,6 +62,9 @@
                 </div>
               </div>
             </div>
+            <div class="content__item" v-if="note">
+              <span class="text--bold">Примечание:</span> {{ note }}
+            </div>
           </div>
         </div>
       </div>
