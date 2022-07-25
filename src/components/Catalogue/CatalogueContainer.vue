@@ -157,7 +157,11 @@ export default defineComponent({
             value: [
               { text: 'высота', value: '860' },
               { text: 'ширина', value: '677' },
-              { text: 'длина', value: '1250' },
+              {
+                text: 'длина',
+                subtext: '(при закрытой/открытой пробке)',
+                value: '1250/1970',
+              },
             ],
           },
           {
@@ -185,11 +189,11 @@ export default defineComponent({
             text: 'Габариты контейнера, мм',
             value: [
               { text: 'высота', value: '860' },
-              { text: 'ширина', value: '670' },
+              { text: 'ширина', value: '677' },
               {
                 text: 'длина',
                 subtext: '(при закрытой/открытой пробке)',
-                value: '1340',
+                value: ' 1160/1830',
               },
             ],
           },
