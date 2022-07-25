@@ -219,7 +219,7 @@ export default defineComponent({
         title: 'Взрывозащитный контейнер ЭТЦ-15',
         itemDescriptions: [
           {
-            text: 'Масса загружаемого ВВ, кг',
+            text: 'Масса загружаемого ВВ, г',
             subtext: '(в тротиловом эквиваленте)',
             value: '60',
           },
