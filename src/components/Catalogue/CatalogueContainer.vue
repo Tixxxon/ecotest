@@ -33,6 +33,34 @@
           />
         </div>
         <div class="catalogue__item-container">
+          <CatalogueItemTypeETC11M
+            :title="productsData.etc11m.title"
+            :item-descriptions="productsData.etc11m.itemDescriptions"
+            :images="productsData.etc11m.imageSrc"
+          />
+        </div>
+        <div class="catalogue__item-container">
+          <CatalogueItemType1
+            :title="productsData.etcv12.title"
+            :item-descriptions="productsData.etcv12.itemDescriptions"
+            :images="productsData.etcv12.imageSrc"
+          />
+        </div>
+        <div class="catalogue__item-container">
+          <CatalogueItemType1
+            :title="productsData.etcv1200400.title"
+            :item-descriptions="productsData.etcv1200400.itemDescriptions"
+            :images="productsData.etcv1200400.imageSrc"
+          />
+        </div>
+        <div class="catalogue__item-container">
+          <CatalogueItemType1
+            :title="productsData.etcv14mk.title"
+            :item-descriptions="productsData.etcv14mk.itemDescriptions"
+            :images="productsData.etcv14mk.imageSrc"
+          />
+        </div>
+        <div class="catalogue__item-container">
           <CatalogueItemType2
             :title="productsData.etc15.title"
             :item-descriptions="productsData.etc15.itemDescriptions"
@@ -52,34 +80,6 @@
             :item-descriptions="productsData.etc45.itemDescriptions"
             :note="productsData.etc45.note"
             :images="productsData.etc45.imageSrc"
-          />
-        </div>
-        <div class="catalogue__item-container">
-          <CatalogueItemType1
-            :title="productsData.etcv12.title"
-            :item-descriptions="productsData.etcv12.itemDescriptions"
-            :images="productsData.etcv12.imageSrc"
-          />
-        </div>
-        <div class="catalogue__item-container">
-          <CatalogueItemTypeETC11M
-            :title="productsData.etc11m.title"
-            :item-descriptions="productsData.etc11m.itemDescriptions"
-            :images="productsData.etc11m.imageSrc"
-          />
-        </div>
-        <div class="catalogue__item-container">
-          <CatalogueItemType1
-            :title="productsData.etcv14mk.title"
-            :item-descriptions="productsData.etcv14mk.itemDescriptions"
-            :images="productsData.etcv14mk.imageSrc"
-          />
-        </div>
-        <div class="catalogue__item-container">
-          <CatalogueItemType1
-            :title="productsData.etcv1200400.title"
-            :item-descriptions="productsData.etcv1200400.itemDescriptions"
-            :images="productsData.etcv1200400.imageSrc"
           />
         </div>
       </div>
@@ -141,7 +141,7 @@ const productsData = {
     imageSrc: ['etc-2/etc-2-1.png'],
   },
   etc3k: {
-    title: 'Взрывозащитный контейнер ЭТЦ-3К',
+    title: 'Взрывозащитный контейнер ЭТЦ 3К',
     itemDescriptions: [
       {
         text: 'Масса заряда ВВ, допустимого к безопасному хранению, кг',
@@ -171,7 +171,12 @@ const productsData = {
       },
     ],
     note: 'Изделие может комплектоваться специальным прицепом для перевозки автотранспортом',
-    imageSrc: ['etc-3k/etc-3k-1.png', 'etc-3k/etc-3k-2.png'],
+    imageSrc: [
+      'etc-3k/etc-3k-1.jpg',
+      'etc-3k/etc-3k-2.jpg',
+      'etc-3k/etc-3k-3.jpg',
+      'etc-3k/etc-3k-4.jpg',
+    ],
   },
   etc3mk: {
     title: 'Взрывозащитный контейнер ЭТЦ-3МК',
@@ -205,10 +210,10 @@ const productsData = {
     ],
     note: 'Изделие обладает повышенной герметичностью и может комплектоваться специальным прицепом для перевозки автотранспортом',
     imageSrc: [
-      'etc-3mk/etc-3mk-1.png',
-      'etc-3mk/etc-3mk-2.png',
-      'etc-3mk/etc-3mk-3.png',
-      'etc-3mk/etc-3mk-4.png',
+      'etc-3mk/etc-3mk-1.jpg',
+      'etc-3mk/etc-3mk-2.jpg',
+      'etc-3mk/etc-3mk-3.jpg',
+      'etc-3mk/etc-3mk-4.jpg',
     ],
   },
   etc15: {
@@ -348,7 +353,7 @@ const productsData = {
     imageSrc: ['etc11m/etc11m-1.png'],
   },
   etcv14mk: {
-    title: 'Многоцелевой ствольный разрушитель – «Деформатор-М»',
+    title: 'Многоцелевой ствольный разрушитель – «Деформатор-М» (ЭТЦВ-14МК)',
     itemDescriptions: [
       {
         text: 'Калибр стреляющего устройства, мм',
