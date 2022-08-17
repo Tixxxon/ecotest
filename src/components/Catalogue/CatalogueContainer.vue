@@ -33,34 +33,6 @@
           />
         </div>
         <div class="catalogue__item-container">
-          <CatalogueItemTypeETC11M
-            :title="productsData.etc11m.title"
-            :item-descriptions="productsData.etc11m.itemDescriptions"
-            :images="productsData.etc11m.imageSrc"
-          />
-        </div>
-        <div class="catalogue__item-container">
-          <CatalogueItemType1
-            :title="productsData.etcv12.title"
-            :item-descriptions="productsData.etcv12.itemDescriptions"
-            :images="productsData.etcv12.imageSrc"
-          />
-        </div>
-        <div class="catalogue__item-container">
-          <CatalogueItemType1
-            :title="productsData.etcv1200400.title"
-            :item-descriptions="productsData.etcv1200400.itemDescriptions"
-            :images="productsData.etcv1200400.imageSrc"
-          />
-        </div>
-        <div class="catalogue__item-container">
-          <CatalogueItemType1
-            :title="productsData.etcv14mk.title"
-            :item-descriptions="productsData.etcv14mk.itemDescriptions"
-            :images="productsData.etcv14mk.imageSrc"
-          />
-        </div>
-        <div class="catalogue__item-container">
           <CatalogueItemType2
             :title="productsData.etc15.title"
             :item-descriptions="productsData.etc15.itemDescriptions"
@@ -80,6 +52,35 @@
             :item-descriptions="productsData.etc45.itemDescriptions"
             :note="productsData.etc45.note"
             :images="productsData.etc45.imageSrc"
+          />
+        </div>
+        <div class="catalogue__item-container">
+          <CatalogueItemTypeETC11M
+            :title="productsData.etc11m.title"
+            :item-descriptions="productsData.etc11m.itemDescriptions"
+            :images="productsData.etc11m.imageSrc"
+          />
+        </div>
+        <div class="catalogue__item-container">
+          <CatalogueItemType1
+            :title="productsData.etcv12.title"
+            :item-descriptions="productsData.etcv12.itemDescriptions"
+            :images="productsData.etcv12.imageSrc"
+            :note="productsData.etcv12.note"
+          />
+        </div>
+        <div class="catalogue__item-container">
+          <CatalogueItemType1
+            :title="productsData.etcv1200400.title"
+            :item-descriptions="productsData.etcv1200400.itemDescriptions"
+            :images="productsData.etcv1200400.imageSrc"
+          />
+        </div>
+        <div class="catalogue__item-container">
+          <CatalogueItemType1
+            :title="productsData.etcv14mk.title"
+            :item-descriptions="productsData.etcv14mk.itemDescriptions"
+            :images="productsData.etcv14mk.imageSrc"
           />
         </div>
       </div>
@@ -171,12 +172,7 @@ const productsData = {
       },
     ],
     note: 'Изделие может комплектоваться специальным прицепом для перевозки автотранспортом',
-    imageSrc: [
-      // 'etc-3k/etc-3k-1.jpg',
-      // 'etc-3k/etc-3k-2.jpg',
-      'etc-3k/etc-3k-3.jpg',
-      'etc-3k/etc-3k-4.jpg',
-    ],
+    imageSrc: ['etc-3k/etc-3k-3.jpg', 'etc-3k/etc-3k-4.jpg'],
   },
   etc3mk: {
     title: 'Взрывозащитный контейнер ЭТЦ-3МК',
@@ -309,23 +305,19 @@ const productsData = {
         value: '3.4',
       },
     ],
+    note: 'Применяется совместно с другими средствами индивидуальной защиты',
     imageSrc: ['etcv-12/etcv-12-1.png'],
   },
   etc11m: {
     title: 'Специальный взрывозащитный комплект ЭТЦ 11М-«Демпфер-М»',
     itemDescriptions: [
       {
-        text: 'Расстояние до обезвреживаемого СВУ при работе манипулятором, м',
+        text: 'Расстояние до обезвреживаемого самодельного взрывного устройства при работе манипулятором, м',
         value: '4.5',
       },
       {
-        text: 'Тротиловый эквивалент СВУ, кг',
+        text: 'Тротиловый эквивалент самодельного взрывного устройства, кг',
         value: '5',
-      },
-      {
-        text: 'Габариты щита, мм',
-        subtext: '(в сложенном виде)',
-        value: '1700х600х200',
       },
       {
         text: 'Габариты щита, мм',
@@ -365,13 +357,10 @@ const productsData = {
       },
       {
         text: 'Тип и толщина пробиваемой преграды, мм',
-        subtext: 'сталь (стальным шариком)',
-        value: '4',
-      },
-      {
-        text: 'Тип и толщина пробиваемой преграды, мм',
-        subtext: 'фанера (дробью с жидкостью)',
-        value: '4',
+        value: [
+          { text: 'сталь', subtext: '(стальным шариком)', value: 4 },
+          { text: 'фанера', subtext: '(дробью и жидкостью)', value: 4 },
+        ],
       },
       {
         text: 'Дульная скорость метаемых тел, м/сек',
@@ -386,7 +375,7 @@ const productsData = {
   },
   etcv1200400: {
     title:
-      'Комплект ручных манипуляторов для дистанционной работы с СВУ – «ЭТЦВ-12.00.400»',
+      'Комплект ручных манипуляторов для дистанционной работы с самодельными взрывными устройствами – «ЭТЦВ-12.00.400»',
     itemDescriptions: [
       {
         text: 'Безопасная работа с ВВ, г',
@@ -403,6 +392,7 @@ const productsData = {
         value: '3.4',
       },
     ],
+    note: 'применяется совместно с другими средствами индивидуальной защиты',
     imageSrc: [
       'etcv-12.00.400/etcv-12.00.400-1.png',
       'etcv-12.00.400/etcv-12.00.400-2.png',
