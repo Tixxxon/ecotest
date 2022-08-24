@@ -90,16 +90,15 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { defineProps } from 'vue';
 import ImageSlider from '../Common/ImageSlider.vue';
 
-interface ProductParam {
+export interface ProductParam {
   text: string;
   subtext?: string;
   value: string | ProductParam[];
 }
 
-interface Props {
+export interface Props {
   title: string;
   images: string[];
   itemDescriptions: ProductParam[];

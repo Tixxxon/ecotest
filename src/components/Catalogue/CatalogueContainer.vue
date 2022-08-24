@@ -6,14 +6,14 @@
           <CatalogueItemType1
             :title="productsData.etc1.title"
             :item-descriptions="productsData.etc1.itemDescriptions"
-            :images="productsData.etc1.imageSrc"
+            :images="productsData.etc1.images"
           />
         </div>
         <div class="catalogue__item-container">
           <CatalogueItemType1
             :title="productsData.etc2.title"
             :item-descriptions="productsData.etc2.itemDescriptions"
-            :images="productsData.etc2.imageSrc"
+            :images="productsData.etc2.images"
           />
         </div>
         <div class="catalogue__item-container">
@@ -21,7 +21,7 @@
             :title="productsData.etc3k.title"
             :item-descriptions="productsData.etc3k.itemDescriptions"
             :note="productsData.etc3k.note"
-            :images="productsData.etc3k.imageSrc"
+            :images="productsData.etc3k.images"
           />
         </div>
         <div class="catalogue__item-container">
@@ -29,21 +29,21 @@
             :title="productsData.etc3mk.title"
             :item-descriptions="productsData.etc3mk.itemDescriptions"
             :note="productsData.etc3mk.note"
-            :images="productsData.etc3mk.imageSrc"
+            :images="productsData.etc3mk.images"
           />
         </div>
         <div class="catalogue__item-container">
           <CatalogueItemType2
             :title="productsData.etc15.title"
             :item-descriptions="productsData.etc15.itemDescriptions"
-            :images="productsData.etc15.imageSrc"
+            :images="productsData.etc15.images"
           />
         </div>
         <div class="catalogue__item-container">
           <CatalogueItemType1
             :title="productsData.etc16.title"
             :item-descriptions="productsData.etc16.itemDescriptions"
-            :images="productsData.etc16.imageSrc"
+            :images="productsData.etc16.images"
           />
         </div>
         <div class="catalogue__item-container">
@@ -51,21 +51,21 @@
             :title="productsData.etc45.title"
             :item-descriptions="productsData.etc45.itemDescriptions"
             :note="productsData.etc45.note"
-            :images="productsData.etc45.imageSrc"
+            :images="productsData.etc45.images"
           />
         </div>
         <div class="catalogue__item-container">
           <CatalogueItemTypeETC11M
             :title="productsData.etc11m.title"
             :item-descriptions="productsData.etc11m.itemDescriptions"
-            :images="productsData.etc11m.imageSrc"
+            :images="productsData.etc11m.images"
           />
         </div>
         <div class="catalogue__item-container">
           <CatalogueItemType1
             :title="productsData.etcv12.title"
             :item-descriptions="productsData.etcv12.itemDescriptions"
-            :images="productsData.etcv12.imageSrc"
+            :images="productsData.etcv12.images"
             :note="productsData.etcv12.note"
           />
         </div>
@@ -73,14 +73,15 @@
           <CatalogueItemType1
             :title="productsData.etcv1200400.title"
             :item-descriptions="productsData.etcv1200400.itemDescriptions"
-            :images="productsData.etcv1200400.imageSrc"
+            :images="productsData.etcv1200400.images"
+            :note="productsData.etcv1200400.note"
           />
         </div>
         <div class="catalogue__item-container">
           <CatalogueItemType1
             :title="productsData.etcv14mk.title"
             :item-descriptions="productsData.etcv14mk.itemDescriptions"
-            :images="productsData.etcv14mk.imageSrc"
+            :images="productsData.etcv14mk.images"
           />
         </div>
       </div>
@@ -91,8 +92,9 @@
 import CatalogueItemType1 from './CatalogueItemType1.vue';
 import CatalogueItemType2 from './CatalogueItemType2.vue';
 import CatalogueItemTypeETC11M from './CatalogueItemTypeETC11M.vue';
+import { Props } from './types';
 
-const productsData = {
+const productsData: { [key: string]: Props } = {
   etc1: {
     title: 'Взрывозащитный контейнер ЭТЦ-1',
     itemDescriptions: [
@@ -115,7 +117,7 @@ const productsData = {
         value: '2.2',
       },
     ],
-    imageSrc: ['etc-1/etc-1-1.png'],
+    images: ['etc-1/etc-1-1.png'],
   },
   etc2: {
     title: 'Взрывозащитный контейнер ЭТЦ-2',
@@ -139,13 +141,13 @@ const productsData = {
         value: '79',
       },
     ],
-    imageSrc: ['etc-2/etc-2-1.png'],
+    images: ['etc-2/etc-2-1.png'],
   },
   etc3k: {
     title: 'Взрывозащитный контейнер ЭТЦ 3К',
     itemDescriptions: [
       {
-        text: 'Масса заряда ВВ, допустимого к безопасному хранению, кг',
+        text: 'Масса загружаемого ВВ, кг',
         subtext: '(в тротиловом эквиваленте)',
         value: '1.5',
       },
@@ -172,13 +174,13 @@ const productsData = {
       },
     ],
     note: 'Изделие может комплектоваться специальным прицепом для перевозки автотранспортом',
-    imageSrc: ['etc-3k/etc-3k-3.jpg', 'etc-3k/etc-3k-4.jpg'],
+    images: ['etc-3k/etc-3k-3.jpg', 'etc-3k/etc-3k-4.jpg'],
   },
   etc3mk: {
     title: 'Взрывозащитный контейнер ЭТЦ-3МК',
     itemDescriptions: [
       {
-        text: 'Масса заряда ВВ, допустимого к безопасному хранению и транспортированию, кг',
+        text: 'Масса загружаемого ВВ, кг',
         subtext: '(в тротиловом эквиваленте)',
         value: '1.5',
       },
@@ -205,7 +207,7 @@ const productsData = {
       },
     ],
     note: 'Изделие обладает повышенной герметичностью и может комплектоваться специальным прицепом для перевозки автотранспортом',
-    imageSrc: [
+    images: [
       'etc-3mk/etc-3mk-1.jpg',
       'etc-3mk/etc-3mk-2.jpg',
       'etc-3mk/etc-3mk-3.jpg',
@@ -234,7 +236,7 @@ const productsData = {
         value: '13',
       },
     ],
-    imageSrc: ['etc-15/etc-15-1.png', 'etc-15/etc-15-2.png'],
+    images: ['etc-15/etc-15-1.png', 'etc-15/etc-15-2.png'],
   },
   etc16: {
     title: 'Взрывозащитный контейнер ЭТЦ-16',
@@ -258,7 +260,7 @@ const productsData = {
         value: '60',
       },
     ],
-    imageSrc: ['etc-16/etc-16-1.png'],
+    images: ['etc-16/etc-16-1.png'],
   },
   etc45: {
     title: 'Взрывозащитный контейнер ЭТЦ-45',
@@ -284,7 +286,7 @@ const productsData = {
     ],
 
     note: 'Применяется для обеспечения безопасного хранения и транспортировки взрывоопасных устройств и веществ, включая 60 шт. электродетонаторов типа ЭД-8-Ж-2000',
-    imageSrc: ['etc-15/etc-15-1.png'],
+    images: ['etc-15/etc-15-1.png'],
   },
   etcv12: {
     title: 'Навесной противоосколочный экран «ЭТЦВ-12»',
@@ -306,7 +308,7 @@ const productsData = {
       },
     ],
     note: 'Применяется совместно с другими средствами индивидуальной защиты',
-    imageSrc: ['etcv-12/etcv-12-1.png'],
+    images: ['etcv-12/etcv-12-1.png'],
   },
   etc11m: {
     title: 'Специальный взрывозащитный комплект ЭТЦ 11М-«Демпфер-М»',
@@ -342,7 +344,7 @@ const productsData = {
         value: '139',
       },
     ],
-    imageSrc: ['etc11m/etc11m-1.png'],
+    images: ['etc11m/etc11m-1.png'],
   },
   etcv14mk: {
     title: 'Многоцелевой ствольный разрушитель – «Деформатор-М» (ЭТЦВ-14МК)',
@@ -358,8 +360,8 @@ const productsData = {
       {
         text: 'Тип и толщина пробиваемой преграды, мм',
         value: [
-          { text: 'сталь', subtext: '(стальным шариком)', value: 4 },
-          { text: 'фанера', subtext: '(дробью и жидкостью)', value: 4 },
+          { text: 'сталь', subtext: '(стальным шариком)', value: '4' },
+          { text: 'фанера', subtext: '(дробью и жидкостью)', value: '4' },
         ],
       },
       {
@@ -371,7 +373,7 @@ const productsData = {
         value: 'от -25<br/>до +40',
       },
     ],
-    imageSrc: ['etcv-14mk/etcv-14mk-2.png', 'etcv-14mk/etcv-14mk-1.png'],
+    images: ['etcv-14mk/etcv-14mk-2.png', 'etcv-14mk/etcv-14mk-1.png'],
   },
   etcv1200400: {
     title:
@@ -393,7 +395,7 @@ const productsData = {
       },
     ],
     note: 'применяется совместно с другими средствами индивидуальной защиты',
-    imageSrc: [
+    images: [
       'etcv-12.00.400/etcv-12.00.400-1.png',
       'etcv-12.00.400/etcv-12.00.400-2.png',
     ],

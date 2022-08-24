@@ -83,52 +83,6 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="row no-gutter">
-                <div class="col-xs-12 col-sm-8">
-                  <div class="content__item-text text--regular">
-                    {{ itemDescription.text }}
-                  </div>
-                  <div
-                    class="content__item-subtext"
-                    v-if="itemDescription.subtext"
-                  >
-                    {{ itemDescription.subtext }}
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                  <div
-                    v-if="typeof itemDescription.value === 'string'"
-                    class="content__item-value text--right text--bold"
-                    v-html="itemDescription.value"
-                  ></div>
-                  <div v-else class="text--right text--regular">
-                    <div
-                      class="dimension__line row"
-                      v-for="(subItem, idx) in itemDescription.value"
-                      :key="idx"
-                    >
-                      <div class="dimension__label col-xs-6">
-                        <div class="col-xs-12">
-                          <div
-                            class="content__item-text text--regular text--center"
-                          >
-                            {{ subItem.text }}
-                          </div>
-                          <div
-                            class="content__item-subtext text--center"
-                            v-if="subItem.subtext"
-                          >
-                            {{ subItem.subtext }}
-                          </div>
-                        </div>
-                      </div>
-                      <span class="content__item-value col-xs-6 text--bold">
-                        {{ subItem.value }}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
             </div>
             <div class="content__item" v-if="note">
               <span class="text--bold">Примечание:</span> {{ note }}
@@ -140,16 +94,15 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { defineProps } from 'vue';
 import ImageSlider from '../Common/ImageSlider.vue';
 
-interface ProductParam {
+export interface ProductParam {
   text: string;
   subtext?: string;
   value: string | ProductParam[];
 }
 
-interface Props {
+export interface Props {
   title: string;
   images: string[];
   itemDescriptions: ProductParam[];
