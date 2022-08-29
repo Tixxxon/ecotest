@@ -92,7 +92,20 @@
 import CatalogueItemType1 from './CatalogueItemType1.vue';
 import CatalogueItemType2 from './CatalogueItemType2.vue';
 import CatalogueItemTypeETC11M from './CatalogueItemTypeETC11M.vue';
-import { Props } from './types';
+// import { Props } from './types';
+
+export interface ProductParam {
+  text: string;
+  subtext?: string;
+  value: string | ProductParam[];
+}
+
+export interface Props {
+  title: string;
+  images: string[];
+  itemDescriptions: ProductParam[];
+  note?: string;
+}
 
 const productsData: { [key: string]: Props } = {
   etc1: {
@@ -170,7 +183,7 @@ const productsData: { [key: string]: Props } = {
       {
         text: 'Масса контейнера с транспортировочной тележкой, кг',
         subtext: '(не более)',
-        value: '390',
+        value: '360',
       },
     ],
     note: 'Изделие может комплектоваться специальным прицепом для перевозки автотранспортом',
